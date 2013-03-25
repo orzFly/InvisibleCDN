@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !invisible.php
+RewriteRule ^(.*)$ /invisible.php/$1 [L]
