@@ -19,7 +19,7 @@ function storage_purge($module) {
 	function rrmdir($dir) {
 		$files = array_diff(scandir($dir), array('.','..'));
 		foreach ($files as $file) {
-			(is_dir("$dir/$file")) ? delTree("$dir/$file") : unlink("$dir/$file");
+			(is_dir("$dir/$file")) ? rrmdir("$dir/$file") : unlink("$dir/$file");
 		}
 		return rmdir($dir);
 	}
